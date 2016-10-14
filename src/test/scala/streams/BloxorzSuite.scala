@@ -41,6 +41,9 @@ class BloxorzSuite extends FunSuite {
   }
 
 
+  
+  
+  
 	test("terrain function level 1") {
     new Level1 {
       assert(terrain(Pos(0,0)), "0,0")
