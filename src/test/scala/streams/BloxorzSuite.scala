@@ -41,14 +41,14 @@ class BloxorzSuite extends FunSuite {
   }
 
 
-    test("Pos") {
+    test("Pos in GameDef") {
     new Level1 {
       val p = new Pos(2,3)
       assert(p.x == 2)
     }
   }
     
-    test("terrainFunction") {
+    test("terrainFunction in StringParserTerrain") {
     new Level1 {
       val t =  Vector(Vector('S', 'T'), Vector('o', 'o'), Vector('o', '-'))
       val p1 = new Pos(1,1) // valid
@@ -57,6 +57,15 @@ class BloxorzSuite extends FunSuite {
       assert(terrainFunction(t)(p1) == true)
       assert(terrainFunction(t)(p2) == false)
       assert(terrainFunction(t)(p3) == false)
+    }
+  }
+    
+        test("isStanding in GameDef") {
+    new Level1 {
+      val b1 = new Block(new Pos(1,2), new Pos(1,2)) // standing
+      val b2 =  new Block(new Pos(1,1), new Pos(1,2)) // not standing
+      assert(b1.isStanding == true)
+       assert(b2.isStanding == false)
     }
   }
   
