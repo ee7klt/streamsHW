@@ -41,6 +41,24 @@ class BloxorzSuite extends FunSuite {
   }
 
 
+    test("Pos") {
+    new Level1 {
+      val p = new Pos(2,3)
+      assert(p.x == 2)
+    }
+  }
+    
+    test("terrainFunction") {
+    new Level1 {
+      val t =  Vector(Vector('S', 'T'), Vector('o', 'o'), Vector('o', '-'))
+      val p1 = new Pos(1,1) // valid
+      val p2 = new Pos(1,2)   // not on grid
+      val p3 = new Pos(2,1)   // on grid, but not valid
+      assert(terrainFunction(t)(p1) == true)
+      assert(terrainFunction(t)(p2) == false)
+      assert(terrainFunction(t)(p3) == false)
+    }
+  }
   
   
   
