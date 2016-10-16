@@ -18,5 +18,16 @@ val Some((posY, posX)) = v.map(_ indexOf num).zipWithIndex.find(_._1 > -1)
                                                   //> res0: scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((0,1))
    List(1,2,3) indexOf 2                          //> res1: Int = 1
   // v indexWhere ((_ indexOf 2) > -1)
-  
+   val level =
+    """ooo-------
+      |oSoooo----
+      |ooooooooo-
+      |-ooooooooo
+      |-----ooToo
+      |------ooo-""".stripMargin                  //> level  : String = ooo-------
+                                                  //| oSoooo----
+                                                  //| ooooooooo-
+                                                  //| -ooooooooo
+                                                  //| -----ooToo
+                                                  //| ------ooo-
 }

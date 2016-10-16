@@ -54,9 +54,9 @@ class BloxorzSuite extends FunSuite {
       val p1 = new Pos(1,1) // valid
       val p2 = new Pos(1,2)   // not on grid
       val p3 = new Pos(2,1)   // on grid, but not valid
-      assert(terrainFunction(t)(p1) == true)
-      assert(terrainFunction(t)(p2) == false)
-      assert(terrainFunction(t)(p3) == false)
+      assert(terrainFunction(t)(p1))
+      assert(!terrainFunction(t)(p2))
+      assert(!terrainFunction(t)(p3))
     }
   }
     
@@ -64,8 +64,19 @@ class BloxorzSuite extends FunSuite {
     new Level1 {
       val b1 = new Block(new Pos(1,2), new Pos(1,2)) // standing
       val b2 =  new Block(new Pos(1,1), new Pos(1,2)) // not standing
-      assert(b1.isStanding == true)
-       assert(b2.isStanding == false)
+      assert(b1.isStanding)
+       assert(!b2.isStanding)
+    }
+  }
+        
+            test("isLegal in GameDef") {
+    new Level1 {
+      val b1 = new Block(new Pos(1,2), new Pos(1,2)) // both Pos standing in terrain
+      val b2 = new Block(new Pos(0,2), new Pos(0,3)) // on Pos off terrain
+       val b3 = new Block(new Pos(2,2), new Pos(3,2)) // both Pos lying in terrain
+      assert(b1.isLegal)
+      assert(!b2.isLegal)
+      assert(b3.isLegal)
     }
   }
   
