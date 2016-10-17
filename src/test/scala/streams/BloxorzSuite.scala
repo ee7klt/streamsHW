@@ -79,6 +79,23 @@ class BloxorzSuite extends FunSuite {
       assert(b3.isLegal)
     }
   }
+            
+             test("how to access Pos in Block?") {
+    new Level1 {
+      val b = new Block(new Pos(1,2), new Pos(1,3)) // both Pos standing in terrain
+      assert(b.b1 == new Pos(1,2))
+      assert(b.b2 == new Pos(1,3))
+    }
+  }
+             
+                          test("done in Solver") {
+    new Level1 {
+      val b1 = new Block(new Pos(4,7), new Pos(4,7)) 
+      val b2 = new Block(new Pos(4,6), new Pos(4,6)) 
+      assert(done(b1))
+      assert(!done(b2))
+    }
+  }
   
   
   
