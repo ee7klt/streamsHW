@@ -1,11 +1,11 @@
 
-package streams
+//package streams
 
 //import streams.GameDef._
 
 object streamsscratch {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
-  //val p = new Pos(2,3)
+  // val p = new Pos(2,3)
   val v = Vector(Vector(1, 2, 3), Vector(4, 5, 6), Vector(7, 8, 9))
                                                   //> v  : scala.collection.immutable.Vector[scala.collection.immutable.Vector[Int
                                                   //| ]] = Vector(Vector(1, 2, 3), Vector(4, 5, 6), Vector(7, 8, 9))
@@ -30,4 +30,8 @@ val Some((posY, posX)) = v.map(_ indexOf num).zipWithIndex.find(_._1 > -1)
                                                   //| -ooooooooo
                                                   //| -----ooToo
                                                   //| ------ooo-
+     val x = List(('a',2),('b',4))                //> x  : List[(Char, Int)] = List((a,2), (b,4))
+     for ((p,q) <- x) yield p                     //> res2: List[Char] = List(a, b)
+     
+     
 }

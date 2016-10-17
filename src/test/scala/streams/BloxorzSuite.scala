@@ -96,7 +96,8 @@ class BloxorzSuite extends FunSuite {
       assert(!done(b2))
     }
   }
-  
+                          
+                            
   
   
 	test("terrain function level 1") {
