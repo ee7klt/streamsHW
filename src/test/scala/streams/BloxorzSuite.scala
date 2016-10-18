@@ -88,6 +88,42 @@ class BloxorzSuite extends FunSuite {
     }
   }
              
+                         test("startBlock") {
+    new Level1 {
+      val b = startBlock // both Pos standing in terrain
+      assert(b.b1 == new Pos(1,1))
+      assert(b.b2 == new Pos(1,1))
+    }
+  }
+                         
+                                                 test("move right") {
+    new Level1 {
+      val b = startBlock 
+      val t = new Block(new Pos(1,2), new Pos(1,3))
+      assert(b.right == t)
+    }
+  }
+                                                 
+test("neighbors") {
+    new Level1 {
+      val b = startBlock
+     val c = b.neighbors
+     assert(c == List((Block(Pos(1,-1),Pos(1,0)),Left), (Block(Pos(1,2),Pos(1,3)),Right), (Block(Pos(-1,1),Pos(0,1)),Up), (Block(Pos(2,1),Pos(3,1)),Down))
+)
+     
+    }
+  } 
+
+
+
+//test("legalNeighbors") {
+//    new Level1 {
+//      val b = startBlock
+//     val c = b.legalNeighbors
+//     assert(true) 
+//    }
+//  } 
+             
                           test("done in Solver") {
     new Level1 {
       val b1 = new Block(new Pos(4,7), new Pos(4,7)) 

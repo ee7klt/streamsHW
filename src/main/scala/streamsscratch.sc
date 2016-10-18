@@ -1,11 +1,16 @@
 
-//package streams
+package streams
 
-//import streams.GameDef._
+import streams.GameDef
 
 object streamsscratch {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
-  // val p = new Pos(2,3)
+  
+ 
+  
+
+   
+   
   val v = Vector(Vector(1, 2, 3), Vector(4, 5, 6), Vector(7, 8, 9))
                                                   //> v  : scala.collection.immutable.Vector[scala.collection.immutable.Vector[Int
                                                   //| ]] = Vector(Vector(1, 2, 3), Vector(4, 5, 6), Vector(7, 8, 9))
