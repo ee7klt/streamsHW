@@ -116,13 +116,14 @@ test("neighbors") {
 
 
 
-//test("legalNeighbors") {
-//    new Level1 {
-//      val b = startBlock
-//     val c = b.legalNeighbors
-//     assert(true) 
-//    }
-//  } 
+test("legalNeighbors") {
+    new Level1 {
+      val b = startBlock
+     val c = b.legalNeighbors
+     println(c)
+     assert(true) 
+    }
+  } 
              
                           test("done in Solver") {
     new Level1 {
