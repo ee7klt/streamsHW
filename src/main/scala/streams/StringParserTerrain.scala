@@ -52,11 +52,17 @@ trait StringParserTerrain extends GameDef {
    * a valid position (not a '-' character) inside the terrain described
    * by `levelVector`.
    */
+  
+  // this version of terrrain function wiill cause an out of bounds exception.
+  // probably not failing gracefully on negative indices
 //  def terrainFunction(levelVector: Vector[Vector[Char]]): Pos => Boolean = 
 //       (Pos) => if ((levelVector.length > Pos.x)
 //      && (levelVector(Pos.x).length > Pos.y)
 //      && (levelVector(Pos.x)(Pos.y) != '-')) true else false
       
+  
+  // Lift returns an option. so i can fail gracefully by returning None if out of bounds
+  // but i'm still not sure why we didn't do if ch != Some('-')
    def terrainFunction(levelVector: Vector[Vector[Char]]): Pos => Boolean = {
     case Pos(x,y) => (for {
       row <- levelVector lift x

@@ -120,10 +120,49 @@ test("legalNeighbors") {
     new Level1 {
       val b = startBlock
      val c = b.legalNeighbors
-     println(c)
-     assert(true) 
+     assert(c == List((Block(Pos(1,2),Pos(1,3)),Right), (Block(Pos(2,1),Pos(3,1)),Down)))
+     
     }
   } 
+
+
+test("neighborsWithHistoryList") {
+    new Level1 {
+      val b = startBlock
+     val history = List()
+     assert(neighborsWithHistoryList(b,history) == List((Block(Pos(1,2),Pos(1,3)),List(Right)), (Block(Pos(2,1),Pos(3,1)),List(Down))))
+     
+     
+    }
+  } 
+
+test("neighborsWithHistory") {
+    new Level1 {
+      val b = startBlock
+     val history = List()
+     assert((neighborsWithHistory(b,history) apply 0) == (Block(Pos(1,2),Pos(1,3)),List(Right)))
+    
+     
+    }
+  } 
+
+test("neighborsWithHistory level 1") {
+    new Level1 {
+      val b = Block(Pos(1,1),Pos(1,1))
+     val history = List(Left,Up)
+     val res = Set(
+  (Block(Pos(1,2),Pos(1,3)), List(Right,Left,Up)),
+  (Block(Pos(2,1),Pos(3,1)), List(Down,Left,Up))
+)
+     assert((neighborsWithHistory(b,history)).toSet == res)
+    
+     
+    }
+  } 
+
+
+
+
              
                           test("done in Solver") {
     new Level1 {
