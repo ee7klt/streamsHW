@@ -40,6 +40,15 @@ class BloxorzSuite extends FunSuite {
     val optsolution = List(Right, Right, Down, Right, Right, Right, Down)
   }
 
+  
+  test("from in Solver") {
+    new Level1 {
+      val b = startBlock
+      val n = from(Stream((startBlock,List())), Set())
+      println(n.toList)
+      assert(true)
+    }
+  }
 
     test("Pos in GameDef") {
     new Level1 {
