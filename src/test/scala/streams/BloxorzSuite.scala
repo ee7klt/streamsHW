@@ -45,8 +45,25 @@ class BloxorzSuite extends FunSuite {
     new Level1 {
       val b = startBlock
       val n = from(Stream((startBlock,List())), Set())
-      println(n.toList)
-      assert(true)
+      assert((n take 3).toList == List((Block(Pos(1,2),Pos(1,3)),List(Right)), (Block(Pos(2,1),Pos(3,1)),List(Down)), (Block(Pos(1,4),Pos(1,4)),List(Right, Right)))
+)
+    }
+  }
+  
+  test("pathsFromStart in Solver") {
+    new Level1 {
+      val b = startBlock
+      val n = pathsFromStart
+      assert((n take 3).toList == List((Block(Pos(1,2),Pos(1,3)),List(Right)), (Block(Pos(2,1),Pos(3,1)),List(Down)), (Block(Pos(1,4),Pos(1,4)),List(Right, Right)))
+)
+    }
+  }
+  
+   test("pathsToGoal in Solver") {
+    new Level1 {
+      val b = startBlock
+      val n = pathsToGoal
+      println((n take 3).toList)
     }
   }
 
