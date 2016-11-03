@@ -63,10 +63,19 @@ class BloxorzSuite extends FunSuite {
     new Level1 {
       val b = startBlock
       val n = pathsToGoal
-      println((n take 3).toList)
+      assert((n take 10).toList == List((Block(Pos(4,7),Pos(4,7)),List(Down, Right, Right, Right, Down, Right, Right)), (Block(Pos(4,7),Pos(4,7)),List(Right, Down, Down, Right, Right, Down, Right)), (Block(Pos(4,7),Pos(4,7)),List(Right, Down, Right, Right, Down, Down, Right)))
+)
     }
   }
 
+   test("solution in Solver") {
+    new Level1 {
+      val b = startBlock
+      val n = solution
+      println(n)
+    }
+  }
+   
     test("Pos in GameDef") {
     new Level1 {
       val p = new Pos(2,3)
